@@ -21,4 +21,10 @@ export class LoginComponent {
       this.error = 'Invalid credentials';
     }
   }
+  // Show or hide password 
+  showPassword = false;
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
 }

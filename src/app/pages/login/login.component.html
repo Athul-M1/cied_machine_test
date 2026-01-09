@@ -1,11 +1,77 @@
-<h2>Login</h2>
+<div class="container-fluid vh-100">
+  <div class="row h-100">
 
-<input type="email" [(ngModel)]="email" placeholder="Email" />
-<br />
+    <!-- LEFT IMAGE SECTION -->
+    <div class="col-md-6 p-0 d-none d-md-block">
+      <div class="image-wrapper">
+        <h4 class="brand">Budget</h4>
+        <img src="assets/images/login-img.jpg" alt="Login" />
+      </div>
+    </div>
 
-<input type="password" [(ngModel)]="password" placeholder="Password" />
-<br />
+    <!-- RIGHT LOGIN SECTION -->
+    <div class="col-md-6 d-flex justify-content-center align-items-center position-relative ">
+      <div class="login-box">
 
-<button (click)="onLogin()">Login</button>
+        <!-- Top right help -->
+        <div class="help-desk-link text-end px-4 mx-1 w-100 position-relative">
+          Having Trouble? <a href="#" class="text-decoration-none mx-1 text-dark fw-bold">Get Help</a>
+          <button class="btn btn-outline-light text-secondary px-1 border border-dark py-1">
+            <img src="assets/icons/us-flag.png" alt="eng" class="eng-img img-fluid">
+            <span class="mx-1">Eng</span>
 
-<p style="color:red" *ngIf="error">{{ error }}</p>
+            <img src="assets/icons/down.png" alt="down.png" class="down-arrow-img">
+          </button>
+        </div>
+
+        <h4 class="mb-2">Login to Budget</h4>
+        <p class="text-muted mb-5">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+
+        <!-- Email -->
+        <div class="form-input rounded-top">
+          <input type="email" class="form-control custom-control" name="email" [(ngModel)]="email" required />
+          <label for="email" class="form-label">Email</label>
+        </div>
+
+        <!-- Password -->
+        <div class="form-input rounded-2 rounded-top-0 mb-4">
+          <input [type]="showPassword ? 'text' : 'password'"
+           class="form-control custom-control"
+            [(ngModel)]="password"
+            name="password"
+            required />
+          <label for="password" class="form-label">Password</label>
+          <span class="show-text" (click)="togglePassword()">
+            {{ showPassword ? 'Hide' : 'Show' }}
+          </span>
+        </div>
+
+        <!-- Options -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" />
+            <label class="form-check-label small">
+              Keep me logged in
+            </label>
+          </div>
+          <a href="#" class="small">Forgot password?</a>
+        </div>
+
+        <!-- Button -->
+        <button class="btn btn-primary w-100 mb-3 login-button" (click)="onLogin()">
+          Login
+        </button>
+
+        <div class="text-center small ">
+          Create New Account?
+        </div>
+        <div *ngIf="error" class="info-box mt-1">
+          <span class="text-danger">Invalid credentials.</span> Try <strong>admin@gmail.com</strong> and pass <strong>123456</strong>.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

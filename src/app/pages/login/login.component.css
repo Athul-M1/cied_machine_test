@@ -1,0 +1,114 @@
+/* Left image */
+.image-wrapper {
+  height: 100%;
+  position: relative;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Brand text */
+.brand {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-weight: 600;
+}
+
+/* Login box */
+.login-box {
+  width: 390px;
+  position: relative;
+}
+
+/* Show password text */
+.show-text {
+  position: absolute;
+  right: 12px;
+  top: 28px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.help-desk-link {
+  position: absolute;
+  top:-90px;
+  right: -100px;
+  cursor: pointer;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+/* Floating input wrapper */
+.form-input {
+  position: relative;              
+  border: 1.5px solid #ced4da;   
+  padding: 20px 12px 12px 12px;   
+  transition: border-color 0.2s ease;
+}
+
+.form-input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  padding: 0;
+  margin-top: 8px;                 /* space for label */
+}
+
+.form-label {
+  position: absolute;
+  left: 12px;
+  top: 20px;                       /* sits just below top border */
+  font-size: 14px;
+  color: #6c757d;
+  pointer-events: none;
+  background: #fff;                 /* optional for floating effect */
+  padding: 0 4px;
+  transition: all 0.2s ease;
+}
+
+/* Floating label effect */
+.form-input input:focus + .form-label,
+.form-input input:valid + .form-label {
+  top: 2px;                        /* floats above input */
+  font-size: 14px;
+ 
+}
+
+/* Border turns blue on focus */
+.form-input:focus-within {
+  border-color: #0d6efd;
+}
+
+/* Custom control */
+.custom-control {
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  box-shadow: none !important;
+}
+
+.custom-control:focus {
+  outline: none;
+}
+
+/* Login button */
+.login-button {
+  height: 65px;
+}
+.info-box {
+  background-color: #f3f4f6;   /* light gray */
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
