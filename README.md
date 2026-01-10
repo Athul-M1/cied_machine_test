@@ -1,27 +1,77 @@
-# MachineTest
+# 🧩 Angular Dashboard Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+An Angular-based dashboard application developed as part of a **machine test**, featuring a dummy authentication system, protected routes, and reusable UI data management.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Live Demo
 
-## Code scaffolding
+🔗 **Live Application**  
+https://cied-machine-test.vercel.app/login
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+📂 **GitHub Repository**  
+https://github.com/Athul-M1/cied_machine_test
 
-## Build
+📁 **Drive Link (Project Files)**  
+https://drive.google.com/file/d/1_KEACDfPOApOeamHGG0pM5oufyN7eOvt/view?usp=sharing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🔐 Login Credentials (Dummy Authentication)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Email:** admin@gmail.com  
+- **Password:** 123456  
 
-## Running end-to-end tests
+> ⚠️ Note: Authentication is implemented using a dummy credential check for demonstration purposes.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## ✨ Features
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- 🔑 Dummy Login Authentication
+- 🛡️ Route Protection using Angular Auth Guards
+- 💾 Login State Persistence using localStorage
+- 📊 Dashboard with Cards and Table Data
+- ♻️ Reusable Data Structure using Constants
+- 🚪 Secure Logout Functionality
+- 📱 Responsive UI
+
+---
+
+## 🧠 Technical Overview
+
+- **Framework:** Angular
+- **Routing:** Angular Router
+- **Authentication:** Dummy validation logic
+- **State Management:** localStorage
+- **Route Protection:** Auth Guards
+- **Code Structure:** Modular & reusable
+
+---
+
+## 📁 Reusability Approach
+
+- Both **table data** and **card data** used in the Dashboard are maintained inside  
+  `constants/index`
+- This improves:
+  - Code readability
+  - Reusability
+  - Maintainability
+  - Scalability
+
+---
+
+## 🛠️ Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/Athul-M1/cied_machine_test.git
+
+# Navigate into the project folder
+cd cied_machine_test
+
+# Install dependencies
+npm install
+
+# Run the application
+ng serve
