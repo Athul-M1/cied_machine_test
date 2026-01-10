@@ -1,0 +1,51 @@
+<div class="table-container">
+  <div class="table-responsive">
+    <table class="table align-middle">
+      <thead class="text-muted ">
+        <tr >
+          <th *ngFor="let col of columns" class="table-head" >{{ col.header }}</th>
+          <th *ngIf="showAction " class="table-head"></th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let row of data">
+  
+          <td *ngFor="let col of columns">
+            <ng-container [ngSwitch]="col.type">
+  
+              <!-- USER (Name + ID) -->
+              <div *ngSwitchCase="'user'">
+                <div class="fw-semibold">
+                  {{ row[col.field]?.name }}
+                </div>
+                <small class="text-muted">
+                  ID {{ row[col.field]?.id }}
+                </small>
+              </div>
+  
+         
+              <div *ngSwitchCase="'category'">
+                <div>{{ row[col.field]?.main }}</div>
+                <small class="text-muted">
+                  {{ row[col.field]?.sub }}
+                </small>
+              </div>
+  
+              
+              <div *ngSwitchDefault>
+                {{ row[col.field] }}
+              </div>
+  
+            </ng-container>
+          </td>
+  
+          <td *ngIf="showAction" class="action-cell">
+            <a href="#" class="text-primary fw-semibold view-btn">View</a>
+          </td>
+  
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

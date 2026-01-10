@@ -1,0 +1,103 @@
+/* Table Container - Prevent Overflow */
+.table-container {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 1rem; /* Optional: adds breathing room */
+}
+
+.table-responsive {
+  max-height: calc(100vh - 200px); /* Adjust 200px based on your header/footer height */
+  overflow-y: auto;
+  overflow-x: auto;
+  border-radius: 5px;
+}
+
+/* Sticky Header (Optional but recommended) */
+.table-responsive thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Table Styling */
+.table {
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* View Button Animation */
+.view-btn {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+}
+
+tr:hover .view-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Row Hover Effect */
+tbody tr {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+tbody tr:hover {
+  background-color: #EDF6FE !important;
+}
+
+tbody tr:hover td {
+  background-color: #EDF6FE !important;
+  color: inherit;
+}
+
+/* Table Header */
+th {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  background-color: #EFF1F3;
+  color: #707070;
+  border: none;
+  padding: 12px 16px;
+  white-space: nowrap; /* Prevents header text wrapping */
+}
+
+thead tr th:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+thead tr th:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* Table Cell Spacing */
+td {
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+
+/* Scrollbar Styling (Optional) */
+.table-responsive::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

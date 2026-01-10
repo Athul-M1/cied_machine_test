@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
+import { CARD_DATA,USER_TABLE_COLUMNS,USER_TABLE_DATA } from 'src/constants';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -8,13 +8,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  constructor(
-    private auth: AuthService,
-    private router: Router
-  ) {}
+ card_data = CARD_DATA
+ columns = USER_TABLE_COLUMNS;
+ users = USER_TABLE_DATA;
 
-  logout() {
-    this.auth.logout();
-    this.router.navigate(['/login']);
+
+ isSidebarOpen = false;
+
+ toggleSidebar() {
+  this.isSidebarOpen = !this.isSidebarOpen;
+  
+  // Prevent body scroll when sidebar is open
+  if (this.isSidebarOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
   }
+}
+
+closeSidebar() {
+  this.isSidebarOpen = false;
+  document.body.style.overflow = '';
+}
 }

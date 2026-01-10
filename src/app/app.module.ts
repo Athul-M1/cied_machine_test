@@ -6,12 +6,20 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CardsComponent } from './components/cards/cards.component';
+import { UserTableComponent } from './components/user-table/user-table.component';
+import { InfoAlertComponent } from './components/info-alert/info-alert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    SidebarComponent,
+    CardsComponent,
+    UserTableComponent,
+    InfoAlertComponent
   ],
   imports: [
     BrowserModule,

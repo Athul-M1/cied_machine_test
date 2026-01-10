@@ -1,0 +1,41 @@
+<div class="sidebar d-flex flex-column">
+  <!-- Close Button for Mobile -->
+   
+  <div class="sidebar-header">
+    <div class="d-flex align-items-center justify-content-between">
+      <h5 class="fw-bold mb-0">Budget</h5>
+      <button 
+        class="btn-close d-lg-none" 
+        (click)="onClose()"
+        aria-label="Close sidebar">
+      </button>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav flex-grow-1">
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" (click)="onNavClick()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon lucide lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <!-- Add more nav items -->
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="user-section">
+      <img src="./assets/images/user.png" class="user-avatar" alt="User avatar"/>
+      <div class="user-info">
+        <div class="user-name">Catherine</div>
+        <small class="user-phone">+91 9876543210</small>
+      </div>
+    </div>
+
+    <button class="btn logout-btn" (click)="logout()">
+      <img src="/assets/icons/logout.png" alt="Logout icon" class="logout-icon"/> 
+      <span>Log Out</span>
+    </button>
+  </div>
+</div>

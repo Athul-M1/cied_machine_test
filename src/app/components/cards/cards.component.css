@@ -1,0 +1,31 @@
+.card {
+    height: 141px;
+}
+.percenteage-section {
+    background-color: white;
+    width: 61px;
+    height: 17px;
+    color: #000000;
+    font-family: Archivo;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    border-radius: 8.5px;
+}
+
+.since-text {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+    .since-text {
+        width: 60px;
+        max-width: 60px;
+    }
+}

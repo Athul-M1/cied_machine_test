@@ -22,6 +22,7 @@
 .login-box {
   width: 390px;
   position: relative;
+  max-width: 90%; /* Prevent overflow on small screens */
 }
 
 /* Show password text */
@@ -35,7 +36,7 @@
 
 .help-desk-link {
   position: absolute;
-  top:-90px;
+  top: -60px;
   right: -100px;
   cursor: pointer;
   font-family: 'Archivo', sans-serif;
@@ -60,17 +61,17 @@
   font-size: 14px;
   background: transparent;
   padding: 0;
-  margin-top: 8px;                 /* space for label */
+  margin-top: 8px;
 }
 
 .form-label {
   position: absolute;
   left: 12px;
-  top: 20px;                       /* sits just below top border */
+  top: 20px;
   font-size: 14px;
   color: #6c757d;
   pointer-events: none;
-  background: #fff;                 /* optional for floating effect */
+  background: #fff;
   padding: 0 4px;
   transition: all 0.2s ease;
 }
@@ -78,9 +79,8 @@
 /* Floating label effect */
 .form-input input:focus + .form-label,
 .form-input input:valid + .form-label {
-  top: 2px;                        /* floats above input */
+  top: 2px;
   font-size: 14px;
- 
 }
 
 /* Border turns blue on focus */
@@ -104,11 +104,125 @@
 .login-button {
   height: 65px;
 }
+
 .info-box {
-  background-color: #f3f4f6;   /* light gray */
+  background-color: #f3f4f6;
   color: #374151;
   border: 1px solid #e5e7eb;
   padding: 12px;
   border-radius: 8px;
   font-size: 14px;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Tablets and small laptops (up to 992px) */
+@media (max-width: 991px) {
+  .help-desk-link {
+    top: -80px;
+    right: 0px;
+    font-size: 14px;
+  }
+  
+  .login-box {
+    width: 360px;
+  }
+}
+
+/* Mobile devices (up to 768px) */
+@media (max-width: 767px) {
+  /* Help desk link repositioning for mobile */
+  .help-desk-link {
+    position: static;
+    text-align: center !important;
+    margin-bottom: 30px;
+    padding: 0 !important;
+  }
+  
+  /* Login box adjustments */
+  .login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 0 20px;
+  }
+  
+  /* Brand text for mobile (if image is hidden) */
+  .brand {
+    position: static;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Adjust button height for mobile */
+  .login-button {
+    height: 55px;
+  }
+  
+  /* Adjust form input padding */
+  .form-input {
+    padding: 18px 12px 10px 12px;
+  }
+  
+  .show-text {
+    top: 24px;
+  }
+}
+
+/* Small mobile devices (up to 576px) */
+@media (max-width: 575px) {
+  .login-box {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
+  /* Adjust font sizes for very small screens */
+  .login-box h4 {
+    font-size: 1.25rem;
+  }
+  
+  .help-desk-link {
+    font-size: 13px;
+  }
+  
+  /* Stack help desk items vertically on very small screens */
+  .help-desk-link button {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .login-button {
+    height: 50px;
+    font-size: 15px;
+  }
+  
+  .info-box {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* Extra small devices (up to 400px) */
+@media (max-width: 400px) {
+  .login-box {
+    padding: 0 10px;
+  }
+  
+  .form-input {
+    padding: 16px 10px 8px 10px;
+  }
+  
+  .form-label {
+    left: 10px;
+    font-size: 13px;
+  }
+  
+  .show-text {
+    right: 10px;
+    top: 22px;
+    font-size: 12px;
+  }
 }
