@@ -1,4 +1,59 @@
-<h2>Dashboard</h2>
-<p>Welcome! You are logged in.</p>
+<div class="container-fluid dashboard-wrapper">
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" [class.show]="isSidebarOpen" (click)="toggleSidebar()"></div>
+  
+  <div class="row g-0">
+    <!-- Sidebar -->
+    <div class="col-lg-2 col-md-3 sidebar-col" [class.show]="isSidebarOpen">
+      <app-sidebar (closeSidebar)="closeSidebar()"></app-sidebar>
+    </div>
 
-<button class="btn btn-primary" (click)="logout()">Logout</button>
+    <!-- Dashboard Content -->
+    <div class="col-lg-10 col-md-9 content-col">
+      <div class="dashboard-content">
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          class="btn menu-toggle d-lg-none" 
+          [class.hidden]="isSidebarOpen"
+          (click)="toggleSidebar()"
+          aria-label="Toggle menu">
+          <i class="bi bi-list"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        </button>
+
+        <div class="dashboard-header">
+          <h4 class="fw-bold mb-2">Dashboard</h4>
+          <p class="text-muted mb-0">Lorem ipsum dolor sit amet</p>
+        </div>
+ <app-info-alert></app-info-alert>
+        <!-- Cards -->
+        <div class="row g-3 g-md-4 my-2 my-md-3">
+          <div class="col-6 col-lg-3" *ngFor="let data of card_data">
+            <app-cards 
+              [title]="data.title" 
+              [value]="data.value" 
+              [percentage]="data.percentage" 
+              [bgClass]="data.bgClass">
+            </app-cards>
+          </div>
+        </div>
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <h6 class="fw-bold mb-3">Recently Active Users</h6>
+          
+          <app-user-table 
+            [columns]="columns" 
+            [data]="users">
+          </app-user-table>
+
+          <div class="text-center mt-3 mt-md-4 view-all-wrapper">
+            <button class="btn border border-dark btn-outline-light rounded-pill btn-sm px-4 text-black">
+              View All
+            </button>
+          </div>
+          
+      </div>
+    </div>
+  </div>
+</div>
